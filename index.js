@@ -4,7 +4,10 @@ const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const userRoute = require('./routes/users')
+const userRoute = require('./routes/users');
+const authRoute = require('./routes/auth');
+
+
 dotenv.config();
 
 async function connectToDatabase() {
@@ -26,6 +29,7 @@ app.use(morgan('common'));
 app.use(express.json());
 
 app.use('/api/users', userRoute)
+app.use('/api/auth', authRoute)
 
 
 app.listen(8800,()=> {

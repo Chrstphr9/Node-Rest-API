@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get('/', (req,res)=>{
-    res.send("This is the user route") 
+    res.send("This is the auth route") 
 })
 
 module.exports = router
