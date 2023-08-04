@@ -25,7 +25,7 @@ app.use(helmet());
 app.use(morgan('common'));
 app.use(express.json());
 
-app.use('/api/user', userRoute)
+app.use('/api/users', userRoute)
 
 
 app.listen(8800,()=> {
