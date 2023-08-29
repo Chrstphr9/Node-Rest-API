@@ -31,20 +31,20 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// //Delete User
-// router.delete("/:id", async (req, res) => {
-//     if (req.body.userId === req.params.id || req.body.isAdmin) {
+//Delete User
+router.delete("/:id", async (req, res) => {
+    if (req.body.userId === req.params.id || req.body.isAdmin) {
       
-//       try {
-//          await User.findByIdAndDelete(req.params.id);
-//         res.status(200).json("Account Has Been Deleted");
-//       } catch (err) {
-//         return res.status(500).json(err);
-//       }
-//     } else {
-//       return res.status(403).json({ message: "You can delete only your acct" });
-//     }
-//   });
+      try {
+         await User.findByIdAndDelete(req.params.id);
+        res.status(200).json("Account Has Been Deleted");
+      } catch (err) {
+        return res.status(500).json(err);
+      }
+    } else {
+      return res.status(403).json({ message: "You can delete only your acct" });
+    }
+  });
 
 // //Get A User
 // router.get("/:id", async (req, res)=>{
