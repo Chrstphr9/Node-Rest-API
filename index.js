@@ -15,7 +15,7 @@ async function connectToDatabase() {
         await mongoose.connect(process.env.MONGO_URL, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-        });
+        }); 
         console.log('Connected To MongoDB');
     } catch (error) {
         console.error('Error connecting to MongoDB:', error);
@@ -32,6 +32,6 @@ app.use('/api/users', userRoute)
 app.use('/api/auth', authRoute)
 
 
-app.listen(8800,()=> {
+app.listen(8803,()=> {
     console.log('Backend is running!!')
 })
